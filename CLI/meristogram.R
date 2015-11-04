@@ -26,7 +26,7 @@ minMovAvgInterval <- function(x)
 
    
 
-createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T)
+createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T, rm.lerp.na=T)
 {
   if(!is.data.frame(hookMeasurements))
     stop("hookMeasurements must be a data.frame")
@@ -81,10 +81,6 @@ createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T)
   meristogram <- unlist(meristogram)
   meristogram <- as.data.frame(matrix(meristogram, ncol=5, byrow=T))
   names(meristogram) <- c("position", "length", "base", "area", "ratio")
-  meristogram$length <- meristogram$length/max(meristogram$length) * 100
-  meristogram$base <- meristogram$base/max(meristogram$base) * 100
-  meristogram$area <- meristogram$area/max(meristogram$area) * 100
-  meristogram$ratio <- meristogram$ratio/max(meristogram$ratio) * 100
   meristogram <- unique(meristogram) # remove duplicates resulting from same sets of hooks being averaged
   
   if(lerp==T)
@@ -95,8 +91,17 @@ createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T)
     r <- approx(meristogram$position, meristogram$ratio, xout=0:100)
     meristogram <- as.data.frame(cbind(l$x, l$y, b$y, a$y, r$y))
     names(meristogram) <- c("position", "length", "base", "area", "ratio")
-    meristogram <- meristogram[!is.na(meristogram$length),]
+    if(rm.lerp.na==T)
+    {
+      meristogram <- meristogram[!is.na(meristogram$length),]
+    }
   }
+  
+  meristogram$length <- meristogram$length/max(meristogram$length, na.rm=T) * 100
+  meristogram$base <- meristogram$base/max(meristogram$base, na.rm=T) * 100
+  meristogram$area <- meristogram$area/max(meristogram$area, na.rm=T) * 100
+  meristogram$ratio <- meristogram$ratio/max(meristogram$ratio, na.rm=T) * 100
+  
   cat(paste("Meristogram created with a moving average segment of: ", movAvgSeg, "\n"))
   return(meristogram)
 }
@@ -109,10 +114,5 @@ plotMeristogram <- function(meristogram, ...)
   points(meristogram$position, meristogram$ratio, pch="R", col="#984EA3", ...)
 }
 
-# function to standardize hook metrics - position and relative size
-
-# function to perform summarize collection and generate meristogram
-
-# two separate functions to easier to make fast implementation in shiny app and also to allow easy experimentation with loess, etc.
 
 
