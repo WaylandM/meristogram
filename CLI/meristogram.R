@@ -1,5 +1,4 @@
-# non-OO version of meristogram
-
+# functions for creating and plotting meristograms from the command line
 
 minHksPerRow <- function(x)
 {
@@ -16,15 +15,11 @@ minHksPerRow <- function(x)
 }
 
 
-
 minMovAvgInterval <- function(x)
 {
   return(ceiling(100/(x+1)))
 }
   
-
-
-   
 
 createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T, rm.lerp.na=T)
 {
@@ -106,6 +101,7 @@ createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T, rm.lerp.na=T)
   return(meristogram)
 }
 
+
 plotMeristogram <- function(meristogram, ...)
 {
   plot(meristogram$position, meristogram$length, pch="L", col="#E41A1C", xlab="% Position", ylab="% Max Value", ylim=c(min(meristogram[,c(2:5)], na.rm=T),100), ...)
@@ -113,6 +109,3 @@ plotMeristogram <- function(meristogram, ...)
   points(meristogram$position, meristogram$area, pch="A", col="#4DAF4A", ...)
   points(meristogram$position, meristogram$ratio, pch="R", col="#984EA3", ...)
 }
-
-
-
