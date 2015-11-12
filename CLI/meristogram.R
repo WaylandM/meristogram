@@ -108,7 +108,7 @@ createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T, rm.lerp.na=T)
 
 plotMeristogram <- function(meristogram, ...)
 {
-  plot(meristogram$position, meristogram$length, pch="L", col="#E41A1C", xlab="% Position", ylab="% Max Value", ylim=c(min(meristogram[,c(2:5)]),100), ...)
+  plot(meristogram$position, meristogram$length, pch="L", col="#E41A1C", xlab="% Position", ylab="% Max Value", ylim=c(min(meristogram[,c(2:5)], na.rm=T),100), ...)
   points(meristogram$position, meristogram$base, pch="B", col="#377EB8", ...)
   points(meristogram$position, meristogram$area, pch="A", col="#4DAF4A", ...)
   points(meristogram$position, meristogram$ratio, pch="R", col="#984EA3", ...)
