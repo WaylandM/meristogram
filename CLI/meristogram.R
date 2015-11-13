@@ -1,16 +1,18 @@
 # functions for creating and plotting meristograms from the command line
 
-minHksPerRow <- function(x)
+minHksPerRow <- function(hookMeasurements)
 {
-  if(!is.vector(x))
-    stop("x must be a vector")
-  if(!is.numeric(x))
-    stop("x must be numeric")
+  if(!is.data.frame(hookMeasurements))
+    stop("hookMeasurements must be a data.frame")
+  if(!identical(names(hookMeasurements)[2], "hook"))
+    stop("The 2nd column of hookMeasurements must be 'hook'")
+  if(!is.numeric(hookMeasurements$hook))
+    stop("hook column of hookMeasurements data.frame must be numeric")
   currMin = max(x)
-  for (i in length(x):2)
-    if(x[i]<x[i-1])
-      if(x[i-1]<currMin)
-        currMin = x[i-1]
+  for (i in length(hookMeasurements$hook):2)
+    if(hookMeasurements$hook[i]<hookMeasurements$hook[i-1])
+      if(hookMeasurements$hook[i-1]<currMin)
+        currMin = hookMeasurements$hook[i-1]
   return(currMin)
 }
 
@@ -27,7 +29,7 @@ createMeristogram <- function(hookMeasurements, movAvgSeg, lerp=T, rm.lerp.na=T)
     stop("hookMeasurements must be a data.frame")
   if(!identical(names(hookMeasurements), c("specimen", "hook", "length", "base")))
     stop("hookMeasurements must be a data.frame with four columns: specimen, hook, length and base")
-  minMovAvgSeg <- ceiling(100/(minHksPerRow(hookMeasurements$hook)+1))
+  minMovAvgSeg <- ceiling(100/(minHksPerRow(hookMeasurements)+1))
   if(missing(movAvgSeg))
     movAvgSeg <- minMovAvgSeg
   if(movAvgSeg < minMovAvgSeg)
