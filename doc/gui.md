@@ -41,5 +41,5 @@ A meristogram will be generated from your file of hook measurements and displaye
 * To load a new set of hook measurements, click on the **Choose File** button.
 * The **Moving Average Interval** can be changed dynamically using the slider control. 
 * **Linear Interpolation** can be toggled on/off using the checkbox.
-* Meristogram data (CSV format) or plots can be downloaded using the buttons at the bottom of the scree.
+* Meristogram data (CSV format) or plots (png and pdf format) can be downloaded using the buttons at the bottom of the scree.
 
