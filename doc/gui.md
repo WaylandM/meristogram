@@ -18,7 +18,7 @@ The following page will open in your web browser:
 
 
 
-<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_start.png" align="right" width="600" alt="Meristogram GUI before data loaded">
+<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_start.png" width="450" alt="Meristogram GUI before data loaded">
 
 
 
@@ -33,5 +33,10 @@ Click on the **Choose File** button to select a file of hook measurements. Hook 
 
 Example data files can be found in this directory:
 https://github.com/WaylandM/meristogram/tree/master/data
+
+##Interactive controls
+A meristogram will be generated from your file of hook measurements and displayed:
+<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_interactive.png" width="800" alt="Meristogram GUI before data loaded">
+
 
 
