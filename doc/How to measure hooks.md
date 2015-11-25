@@ -18,5 +18,9 @@ From each hook in your selected row record two measurements: length (L) and base
 
 ![Hook length and base measurements](/images/hook_measurements.png)
 
-Hook measurements should be entered into a spreadsheet.
+Hook measurements should be entered into a spreadsheet and then save as a comma separated value (CSV) file:
+
+
+
+
 
