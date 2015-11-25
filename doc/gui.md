@@ -38,5 +38,8 @@ https://github.com/WaylandM/meristogram/tree/master/data
 A meristogram will be generated from your file of hook measurements and displayed:
 <img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_interactive.png" width="800" alt="Meristogram GUI before data loaded">
 
-
+* To load a new set of hook measurements, click on the **Choose File** button.
+* The **Moving Average Interval** can be changed dynamically using the slider control. 
+* **Linear Interpolation** can be toggled on/off using the checkbox.
+* Meristogram data (CSV format) or plots can be downloaded using the buttons at the bottom of the scree.
 
