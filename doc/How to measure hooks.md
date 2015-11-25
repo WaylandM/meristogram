@@ -18,9 +18,21 @@ From each hook in your selected row record two measurements: length (L) and base
 
 ![Hook length and base measurements](/images/hook_measurements.png)
 
-Hook measurements should be entered into a spreadsheet and then save as a comma separated value (CSV) file:
 
+##Storing hook measurement data
+The input file format for the meristogram is comma separated value (CSV) with four columns: specimen, hook, length and base.
 
+* **specimen** - unique identifier for the specimen
+* **hook** - numerical position of hook in longitudinal row as counted from the distal end of the proboscis
+* **length** - length of hook blade
+* **base** - width of hook base
+
+Data can be entered into your favourite spreadsheet program and saved as a comma separated value (CSV) file:
+
+![Spreadsheet of raw data.](/images/spreadsheet_raw_data.png)
+
+Example hook data files can be found in:
+https://github.com/WaylandM/meristogram/tree/master/data
 
 
 
