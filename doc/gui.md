@@ -14,3 +14,19 @@ Run the following command in R to launch the application:
 shiny::runGitHub(repo="meristogram", username="waylandm", subdir="gui")
 ```
 
+The following page will open in your web browser:
+
+![Meristogram GUI before data loaded](/images/meristogram_gui_start.png)
+
+##Loading hook measurement data
+Click on the **Choose File** button to select a file of hook measurements. Hook measurement files must be comma separated value (CSV) format with the following four columns: specimen, hook, length and base.
+
+* **specimen** - unique identifier for the specimen
+* **hook** - numerical position of hook in longitudinal row as counted from the distal end of the proboscis
+* **length** - length of hook blade
+* **base** - width of hook base
+
+Example data files can be found in this directory:
+https://github.com/WaylandM/meristogram/tree/master/data
+
+
