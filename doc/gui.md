@@ -16,7 +16,7 @@ shiny::runGitHub(repo="meristogram", username="waylandm", subdir="gui")
 
 The following page will open in your web browser:
 
-![Meristogram GUI before data loaded](/images/meristogram_gui_start.png)
+<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_start.png" align=center width="720">
 
 ##Loading hook measurement data
 Click on the **Choose File** button to select a file of hook measurements. Hook measurement files must be comma separated value (CSV) format with the following four columns: specimen, hook, length and base.
