@@ -13,3 +13,4 @@ Run the following command in R to launch the application:
 ```
 shiny::runGitHub(repo="meristogram", username="waylandm", subdir="gui")
 ```
+
