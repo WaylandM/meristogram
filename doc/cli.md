@@ -18,3 +18,9 @@ If you want to see the functions you have imported, run the list objects command
 ls()
 ```
 
+The file meristogram.R provides four functions: 
+* createMeristogram
+* minHksPerRow
+* minMovAvgInterval
+* plotMeristogram
+
