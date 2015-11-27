@@ -57,6 +57,11 @@ If you want to know how many specimens are represented in your data.frame of hoo
 length(unique(brayi_male_raw$specimen))
 ```
 
+To calculate the smallest moving average interval applicable to your data set, run:
+```r
+minMovAvgInterval(minHksPerRow(brayi_male_raw))
+```
+
 ###3. Generate and plot meristogram
 To create a meristogram with default settings:
 ```r
