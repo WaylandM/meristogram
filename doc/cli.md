@@ -1,16 +1,19 @@
 #Meristogram Command Line Interface (CLI)
 
 ##Functions available
-The script meristogram.R provides four functions: **minHksPerRow**, **minMovAvgInterval**, **createMeristogram** and **plotMeristogram**.
+The script [meristogram.R](https://github.com/WaylandM/meristogram/blob/master/CLI/meristogram.R) provides four functions: **minHksPerRow**, **minMovAvgInterval**, **createMeristogram** and **plotMeristogram**.
 
-###minHksPerRow
+####minHksPerRow
+**minHksPerRow** takes as its argument a data.frame of hook measurements and returns the length of the shortest row of hooks in the collection.
 
+####minMovAvgInterval
+**minMovAvgInterval** takes as its argument the length of the shortest row of hooks in the collection (see **minHksPerRow** above). It returns the minimum size for the moving average interval, such that each proboscis is represented in all moving average intervals. 
 
-###minMovAvgInterval
+The minimum moving average interval is calculated using the formula: *ceiling(100/(x+1))*, where *x* is the length of the shortest row of hooks in the collection.
 
-###createMeristogram
+####createMeristogram
 
-###plotMeristogram
+####plotMeristogram
 
 
 ##How to use the CLI
