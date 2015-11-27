@@ -32,6 +32,7 @@ install.packages("RCurl", dependencies = TRUE)
 ```
 The latest version of the meristogram code can be sourced directly from the meristogram repository on github:
 ```r
+library(RCurl)
 eval(expr = parse(text = getURL("https://raw.githubusercontent.com/WaylandM/meristogram/master/CLI/meristogram.R", ssl.verifypeer=FALSE) ))
 ```
 Alternatively, if you have a local copy of meristogram.R you can read it using **source**, *e.g.*:
@@ -67,3 +68,9 @@ The meristogram can then be plotted:
 ```r
 plotMeristogram(brayi_male_meristogram)
 ```
+
+Optionally, graphical parameters can be passed to **plotMeristogram**. For example, to add a title:
+```r
+plotMeristogram(brayi_male_meristogram, main="Meristogram for Echinorhynchus brayi")
+```
+<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_plot_with_title.png" width="450" alt="Meristogram plot with title">
