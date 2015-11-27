@@ -1,6 +1,20 @@
-#Meristogram Command Line Interface
+#Meristogram Command Line Interface (CLI)
 
-##1. Read source code
+##Functions available
+The script meristogram.R provides four functions: **minHksPerRow**, **minMovAvgInterval**, **createMeristogram** and **plotMeristogram**.
+
+###minHksPerRow
+
+
+###minMovAvgInterval
+
+###createMeristogram
+
+###plotMeristogram
+
+
+##How to use the CLI
+###1. Read source code
 To read files over https we need to install the RCurl package:
 ```r
 install.packages("RCurl", dependencies = TRUE)
@@ -14,13 +28,9 @@ Alternatively, if you have a local copy of meristogram.R you can read it using *
 source("~/meristogram.R")
 ```
 
-The file meristogram.R provides four functions: 
-* **createMeristogram** - generate meristogram from data.frame of hook measurement data.
-* **minHksPerRow** - takes a data.frame of hook measurements as its argument and reports the size of the smallest row of hooks.
-* **minMovAvgInterval** - takes an integer as its argument and calculates the minimum moving average interval such that every specimens is represented in each interval.
-* **plotMeristogram** - plots the generated meristogram.
 
-##2. Read hook measurement data
+
+###2. Read hook measurement data
 Hook measurement data must be stored in a comma separated value (CSV) file with four columns: specimen, hook, length and base (see [How to measure hooks](https://github.com/WaylandM/meristogram/blob/master/doc/How%20to%20measure%20hooks.md)).
 
 To read in an example data file from the meristogram repository on github, use:
@@ -32,5 +42,5 @@ Alternatively, a locally stored hook measurement file can be read using:
 brayi_male_raw <- read.csv("Echinorhynchus_brayi_male.csv")
 ```
 
-##3. Generate and plot meristogram
+###3. Generate and plot meristogram
 
