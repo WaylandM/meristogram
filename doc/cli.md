@@ -67,3 +67,8 @@ The meristogram can then be plotted:
 ```r
 plotMeristogram(brayi_male_meristogram)
 ```
+
+Optionally, graphical parameters can be passed to **plotMeristogram**. For example, to add a title:
+```r
+plotMeristogram(brayi_male_meristogram, main="Meristogram for Echinorhynchus brayi")
+```
