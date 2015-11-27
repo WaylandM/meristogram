@@ -39,8 +39,6 @@ Alternatively, if you have a local copy of meristogram.R you can read it using *
 source("~/meristogram.R")
 ```
 
-
-
 ###2. Read hook measurement data
 Hook measurement data must be stored in a comma separated value (CSV) file with four columns: specimen, hook, length and base (see [How to measure hooks](https://github.com/WaylandM/meristogram/blob/master/doc/How%20to%20measure%20hooks.md)).
 
@@ -53,5 +51,19 @@ Alternatively, a locally stored hook measurement file can be read using:
 brayi_male_raw <- read.csv("Echinorhynchus_brayi_male.csv")
 ```
 
-###3. Generate and plot meristogram
+If you want to know how many specimens are represented in your data.frame of hook measurements, run:
+```r
+length(unique(brayi_male_raw$specimen))
+```
 
+###3. Generate and plot meristogram
+To create a meristogram with default settings:
+```r
+brayi_male_meristogram <- createMeristogram(brayi_male_raw)
+```
+The meristogram will be created and the size of the moving average segment printed to the console.
+
+The meristogram can then be plotted:
+```r
+plotMeristogram(brayi_male_meristogram)
+```
