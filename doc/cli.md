@@ -32,6 +32,7 @@ install.packages("RCurl", dependencies = TRUE)
 ```
 The latest version of the meristogram code can be sourced directly from the meristogram repository on github:
 ```r
+library(RCurl)
 eval(expr = parse(text = getURL("https://raw.githubusercontent.com/WaylandM/meristogram/master/CLI/meristogram.R", ssl.verifypeer=FALSE) ))
 ```
 Alternatively, if you have a local copy of meristogram.R you can read it using **source**, *e.g.*:
