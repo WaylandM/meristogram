@@ -72,3 +72,4 @@ Optionally, graphical parameters can be passed to **plotMeristogram**. For examp
 ```r
 plotMeristogram(brayi_male_meristogram, main="Meristogram for Echinorhynchus brayi")
 ```
+<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_plot_with_title.png" width="450" alt="Meristogram plot with title">
